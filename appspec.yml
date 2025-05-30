@@ -3,7 +3,7 @@ version: 0.0
 os: linux
 
 files:
-  - source: python-helloworld.zip
+  - source: /
     destination: /tmp
 
 hooks:
@@ -17,7 +17,7 @@ hooks:
   AfterInstall:
     - run: |
         cd /tmp
-        unzip -o python-helloworld.zip -d /tmp/python-helloworld
+        chmod +x /tmp/run.sh
       runas: ec2-user
 
   ApplicationStart:
