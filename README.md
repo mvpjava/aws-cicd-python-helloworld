@@ -7,4 +7,5 @@ demo for using CI/CD in aws with simple Python hello-word application
 Access the app in a browser at http://<your-ec2-ip>:5000.
 
 # How to Run the Test
+- pip3 install flask
 - python test_app.py
