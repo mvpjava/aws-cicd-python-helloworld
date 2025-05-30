@@ -1,25 +1,10 @@
 version: 0.0
-
 os: linux
-
 files:
   - source: /
     destination: /tmp
-
 hooks:
-  ApplicationStop:
-    - run: |
-        echo "Stopping python app..."
-        # Add your stop command below, e.g.:
-        pkill -f "python3 app.py" || echo "App not running"
-      runas: ec2-user
-      
-  AfterInstall:
-    - run: |
-        chmod +x /tmp/run.sh
-      runas: ec2-user
-
-ApplicationStart:
-  - run: /tmp/run.sh
-    runas: ec2-user
-
+  ApplicationStart:
+    - location: run.sh
+      timeout: 60
+      runas: root
