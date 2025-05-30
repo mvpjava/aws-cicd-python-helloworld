@@ -11,3 +11,9 @@ phases:
     commands:
       - echo Running unit tests...
       - python -m unittest test_app.py
+artifacts:
+  files:
+    - app.py
+    - requirements.txt
+    - run.sh
+  name: output-artifact
