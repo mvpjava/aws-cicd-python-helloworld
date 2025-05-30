@@ -16,11 +16,10 @@ hooks:
       
   AfterInstall:
     - run: |
-        cd /tmp
         chmod +x /tmp/run.sh
       runas: ec2-user
 
-  ApplicationStart:
-    - location: run.sh
-      runas: ec2-user
+ApplicationStart:
+  - run: /tmp/run.sh
+    runas: ec2-user
 
