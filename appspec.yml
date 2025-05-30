@@ -21,6 +21,6 @@ hooks:
       runas: ec2-user
 
   ApplicationStart:
-    - location: /tmp/run.sh
+    - location: run.sh
       runas: ec2-user
 
