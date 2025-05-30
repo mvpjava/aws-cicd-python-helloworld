@@ -7,6 +7,13 @@ files:
     destination: /tmp
 
 hooks:
+  ApplicationStop:
+    - run: |
+        echo "Stopping python app..."
+        # Add your stop command below, e.g.:
+        pkill -f "python3 app.py" || echo "App not running"
+      runas: ec2-user
+      
   AfterInstall:
     - run: |
         cd /tmp
