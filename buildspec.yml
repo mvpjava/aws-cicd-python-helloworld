@@ -16,5 +16,6 @@ artifacts:
     - app.py
     - requirements.txt
     - run.sh
+    - stop.sh
     - appspec.yml
   name: output-artifact
