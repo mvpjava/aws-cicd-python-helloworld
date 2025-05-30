@@ -1,0 +1,19 @@
+version: 0.0
+
+os: linux
+
+files:
+  - source: python-helloworld.zip
+    destination: /tmp
+
+hooks:
+  AfterInstall:
+    - run: |
+        cd /tmp
+        unzip -o python-helloworld.zip -d /tmp/python-helloworld
+      runas: ec2-user
+
+  ApplicationStart:
+    - location: /tmp/run.sh
+      runas: ec2-user
+
