@@ -17,5 +17,5 @@ artifacts:
     - requirements.txt
     - run.sh
     - stop.sh
-    - appspec.yml
+    #- appspec.yml
   name: output-artifact
